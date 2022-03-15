@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav " fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><div>ALGALOG</div></mat-toolbar>
+    <mat-nav-list>
+
+      <a mat-list-item class="nav-link" routerLink="/entrega" >
+        <div class="sb-nav-link-icon "> <span class="material-icons mr-4">
+          local_shipping
+          </span> </div>
+        <div class="sb-nav-link-icon"> Entrega </div>
+      </a>
+
+      <a mat-list-item class="nav-link" routerLink="#" routerLinkActive="selected">
+        <div> <span class="material-icons mr-4">
+          fact_check
+          </span> </div>
+        <div class="sb-nav-link-icon" > Status</div>
+
+      </a>
+
+      <a mat-list-item class="nav-link" routerLink="#" routerLinkActive="selected">
+        <div> <span class="material-icons mr-4">
+            people
+          </span> </div>
+        <div class="sb-nav-link-icon"> Clientes </div>
+
+      </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="background-color: rgb(228, 235, 231);" >
+
+    <mat-toolbar class="mat-elevation-z2" style="background-color: white;">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>ALGALOG</span>
+      <span class="example-spacer"></span>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>
