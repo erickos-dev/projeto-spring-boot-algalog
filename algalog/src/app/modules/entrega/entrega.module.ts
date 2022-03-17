@@ -5,12 +5,30 @@ import { entregaRoutes } from './entrega.routing';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule  } from '@angular/material/form-field';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   imports: [
     RouterModule.forChild(entregaRoutes),
     CommonModule,
-
+    MatDividerModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatButtonModule
   ],
   declarations: [EntregaComponent],
   exports: [EntregaComponent],
