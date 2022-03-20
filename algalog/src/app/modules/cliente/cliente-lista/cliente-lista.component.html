@@ -1,4 +1,4 @@
-<table mat-table *ngIf="dataSource" [dataSource]="dataSource" class="w-full">
+<table mat-table *ngIf="dataSource" [dataSource]="dataSource" class="w-full mat-elevation-z2">
 
   <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
     <th mat-header-cell *matHeaderCellDef> {{column}} </th>

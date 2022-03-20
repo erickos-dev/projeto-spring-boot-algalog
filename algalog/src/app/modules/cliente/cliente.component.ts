@@ -9,8 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ClienteComponent implements OnInit {
 
-
   formCliente: FormGroup;
+
+  loading: boolean = false;
 
   constructor(private _formBuilder: FormBuilder,
     private _clienteService: ClienteService
@@ -30,17 +31,18 @@ export class ClienteComponent implements OnInit {
   }
 
   submitForm() {
+    this.loading = true;
     if (!this.formCliente.valid) {
+      this.loading = false;
       return;
     }
     const cliente = this.formCliente.getRawValue();
     this._clienteService.postSalvarCliente(cliente).then(response => {
-    console.log("🚀 ~ file: cliente.component.ts ~ line 38 ~ ClienteComponent ~ this._clienteService.postSalvarCliente ~ response", response)
+      this.loading = false;
     })
-    .catch(err => {
-    console.log("🚀 ~ file: cliente.component.ts ~ line 41 ~ ClienteComponent ~ submitForm ~ err", err)
-      
-    });
+      .catch(err => {
+        this.loading = false;
+      });
   }
 
 

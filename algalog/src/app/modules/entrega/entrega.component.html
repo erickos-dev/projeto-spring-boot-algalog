@@ -9,7 +9,7 @@
           Dados do Cliente
         </mat-panel-title>
         <mat-panel-description>
-          Type your name and age
+          Informações do cliente
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -24,8 +24,8 @@
         <input matInput type="number" min="1">
       </mat-form-field>
       <mat-action-row>
-        <button  mat-button color="primary" class="effect effect-2" (click)="nextStep()">Próximo<span class="material-icons">
-          keyboard_double_arrow_right
+        <button  mat-button  class="primary" (click)="nextStep()">Próximo<span class="material-icons ml-2">
+          arrow_circle_right
           </span></button>
       </mat-action-row>
 
@@ -40,7 +40,7 @@
           Destinatário
         </mat-panel-title>
         <mat-panel-description>
-          Type the country name
+          Informações do Endereço para a entrega
           <mat-icon>map</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -51,11 +51,11 @@
       </mat-form-field>
 
       <mat-action-row>
-        <button  mat-button color="warn" (click)="prevStep()"><span class="material-icons">
-          keyboard_double_arrow_left
+        <button  mat-button class="warn" (click)="prevStep()"><span class="material-icons mr-2">
+          arrow_circle_left
           </span>Voltar</button>
-        <button  mat-button color="primary" (click)="nextStep()">Próximo<span class="material-icons">
-          keyboard_double_arrow_right
+        <button  mat-button class="primary" (click)="nextStep()">Próximo<span class="material-icons ml-2">
+          arrow_circle_right
           </span></button>
       </mat-action-row>
 
@@ -69,7 +69,7 @@
           Informações
         </mat-panel-title>
         <mat-panel-description>
-          Inform the date you wish to travel
+          Informações sobre a entrega
           <mat-icon>date_range</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -81,11 +81,11 @@
       <mat-datepicker #picker></mat-datepicker>
 
       <mat-action-row>
-        <button  mat-button color="warn" (click)="prevStep()"><span class="material-icons">
-          keyboard_double_arrow_left
+        <button  mat-button class="warn" (click)="prevStep()"><span class="material-icons mr-2">
+          arrow_circle_left
           </span>Voltar</button>
-        <button  mat-button color="primary" (click)="nextStep()">Salvar<span class="material-icons ml-2">
-          done
+        <button  mat-button class="primary" (click)="nextStep()">Salvar<span class="material-icons ml-2">
+          add_circle_outline
           </span></button>
       </mat-action-row>
     </mat-expansion-panel>

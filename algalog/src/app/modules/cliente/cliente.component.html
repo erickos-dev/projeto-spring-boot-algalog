@@ -3,15 +3,15 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Dados Cliente
+          Cadastro de Cliente
         </mat-panel-title>
         <mat-panel-description>
-          Formulario de Cadastro
+          Formulário de Cadastro
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <form [formGroup]="formCliente" >
+      <form [formGroup]="formCliente">
 
         <mat-form-field appearance="outline">
           <mat-label>Nome</mat-label>
@@ -25,14 +25,19 @@
 
         <mat-form-field appearance="outline">
           <mat-label>E-mail</mat-label>
-          <input matInput type="text" formControlName="email">
+          <input matInput type="text" formControlName="email" (keydown.enter)="submitForm()">
         </mat-form-field>
 
       </form>
 
       <mat-action-row>
-        <button mat-raised-button  style="background-color: #0D2F4B;" class=" primary hover:animate-pulse hover:bg-sky-900 hover:text-white	"(click)="submitForm()">Salvar<span class="material-icons ml-2">
-            done
+        <button mat-raised-button style="background-color: #0D2F4B;"
+          class=" primary hover:animate-pulse hover:bg-sky-900 hover:text-white	" (click)="submitForm()">Salvar
+          <span *ngIf="!loading" class="material-icons ml-2">
+            add_circle_outline
+          </span>
+          <span *ngIf="loading" class="material-icons animate-spin">
+            sync
           </span></button>
 
       </mat-action-row>
@@ -52,7 +57,7 @@
       </mat-expansion-panel-header>
 
 
-        <app-cliente-lista ></app-cliente-lista>
+      <app-cliente-lista></app-cliente-lista>
 
     </mat-expansion-panel>
 
