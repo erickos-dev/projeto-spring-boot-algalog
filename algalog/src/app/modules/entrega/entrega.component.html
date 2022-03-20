@@ -1,8 +1,10 @@
-
 <div class="p-5">
   <mat-accordion class="example-headers-align">
+
     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+
       <mat-expansion-panel-header>
+
         <mat-panel-title>
           Dados do Cliente
         </mat-panel-title>
@@ -22,11 +24,17 @@
         <input matInput type="number" min="1">
       </mat-form-field>
       <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
+        <button  mat-button color="primary" class="effect effect-2" (click)="nextStep()">Próximo<span class="material-icons">
+          keyboard_double_arrow_right
+          </span></button>
       </mat-action-row>
+
     </mat-expansion-panel>
 
+    <br>
+
     <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+
       <mat-expansion-panel-header>
         <mat-panel-title>
           Destinatário
@@ -43,15 +51,22 @@
       </mat-form-field>
 
       <mat-action-row>
-        <button mat-button color="warn" (click)="prevStep()">Previous</button>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
+        <button  mat-button color="warn" (click)="prevStep()"><span class="material-icons">
+          keyboard_double_arrow_left
+          </span>Voltar</button>
+        <button  mat-button color="primary" (click)="nextStep()">Próximo<span class="material-icons">
+          keyboard_double_arrow_right
+          </span></button>
       </mat-action-row>
+
     </mat-expansion-panel>
+
+    <br>
 
     <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-         Informações
+          Informações
         </mat-panel-title>
         <mat-panel-description>
           Inform the date you wish to travel
@@ -66,8 +81,12 @@
       <mat-datepicker #picker></mat-datepicker>
 
       <mat-action-row>
-        <button mat-button color="warn" (click)="prevStep()">Previous</button>
-        <button mat-button color="primary" (click)="nextStep()">End</button>
+        <button  mat-button color="warn" (click)="prevStep()"><span class="material-icons">
+          keyboard_double_arrow_left
+          </span>Voltar</button>
+        <button  mat-button color="primary" (click)="nextStep()">Salvar<span class="material-icons ml-2">
+          done
+          </span></button>
       </mat-action-row>
     </mat-expansion-panel>
 

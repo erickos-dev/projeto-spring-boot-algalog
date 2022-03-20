@@ -16,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routerConfig: ExtraOptions = {
@@ -41,8 +42,8 @@ const routerConfig: ExtraOptions = {
     LayoutModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
-
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

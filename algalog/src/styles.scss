@@ -6,7 +6,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Fredoka,
+  Roboto, "Helvetica Neue", sans-serif;
 }
 
 @import url(input.css);
@@ -32,4 +33,9 @@ body {
       }
     }
   }
+}
+
+.primary{
+  background-color: #0D2F4B;
+  color: #fff;
 }

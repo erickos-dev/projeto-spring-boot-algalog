@@ -13,14 +13,14 @@ export const appRoutes: Route[] = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', loadChildren: () => import('src/app/modules/entrega/entrega.module').then(m => m.EntregaModule) },
+      { path: '', loadChildren: () => import('./modules/entrega/entrega.module').then(m => m.EntregaModule) },
     ]
   },
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', loadChildren: () => import('src/app/modules/cliente/cliente.module').then(m => m.ClienteModule) },
+      { path: '', loadChildren: () => import('./modules/cliente/cliente.module').then(m => m.ClienteModule) },
     ]
   },
 

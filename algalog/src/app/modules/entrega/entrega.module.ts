@@ -3,16 +3,15 @@ import { CommonModule } from '@angular/common';
 import { EntregaComponent } from './entrega.component';
 import { entregaRoutes } from './entrega.routing';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule  } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 
@@ -23,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatDividerModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
     MatExpansionModule,
     MatIconModule,
     MatDatepickerModule,

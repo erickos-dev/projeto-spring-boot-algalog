@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from "@angular/core";
-import { Environment } from 'src/app/decorators/environment.decorator';
+import { Environment } from 'app/decorators/environment.decorator';
 import { Observable, Subject, throwError } from "rxjs";
 import { catchError, finalize } from 'rxjs/operators';
 
