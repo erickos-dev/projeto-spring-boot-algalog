@@ -1,6 +1,6 @@
 <div class="p-5">
   <mat-accordion class="example-headers-align" hideToggle>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step == 0" (opened)="setStep(0)">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Cadastro de Cliente
@@ -31,10 +31,31 @@
       </form>
 
       <mat-action-row>
-        <button mat-raised-button style="background-color: #0D2F4B;"
-          class=" primary hover:animate-pulse hover:bg-sky-900 hover:text-white	" (click)="submitForm()">Salvar
-          <span *ngIf="!loading" class="material-icons ml-2">
-            add_circle_outline
+        <button mat-raised-button  *ngIf="formCliente.controls['id'].value" [disabled]="loading"
+          class=" warn hover:animate-pulse hover:bg-sky-900 hover:text-white	" (click)="apagarCliente()">
+          <span *ngIf="formCliente.controls['id'].value">Deletar</span>
+          <span class="material-icons ml-2">
+            delete
+          </span>
+        </button>
+
+        <button mat-raised-button color="basic" *ngIf="formCliente.controls['id'].value" [disabled]="loading"
+          class="hover:animate-pulse hover:bg-sky-900 hover:text-white	" (click)="formCliente.reset()">
+          <span *ngIf="formCliente.controls['id'].value">Novo</span>
+          <span class="material-icons ml-2">
+            person_add
+          </span>
+        </button>
+
+        <button mat-raised-button class="primary" [disabled]="loading"
+          class=" primary hover:animate-pulse hover:bg-sky-900 hover:text-white	" (click)="submitForm()">
+          <span *ngIf="!formCliente.controls['id'].value">Salvar</span>
+          <span *ngIf="formCliente.controls['id'].value">Atualizar</span>
+          <span *ngIf="!loading && formCliente.controls['id'].value" class="material-icons ml-2">
+            edit
+          </span>
+          <span *ngIf="!loading && !formCliente.controls['id'].value" class="material-icons ml-2">
+            person_add
           </span>
           <span *ngIf="loading" class="material-icons animate-spin">
             sync
@@ -45,7 +66,7 @@
 
     <br>
 
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step == 1" (opened)="setStep(1)">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Catálogo de Clientes
@@ -57,7 +78,7 @@
       </mat-expansion-panel-header>
 
 
-      <app-cliente-lista></app-cliente-lista>
+      <app-cliente-lista #clientes (clienteEditar)="editarCliente($event)"></app-cliente-lista>
 
     </mat-expansion-panel>
 

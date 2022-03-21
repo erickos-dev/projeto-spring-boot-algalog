@@ -12,7 +12,7 @@ export class ClienteService {
     private http: HttpClient,) { }
 
 
-  postSalvarCliente(cliente: Cliente): Promise<Cliente> {
+  postSalvarCliente(cliente: Cliente) {
 
     return new Promise<any>((resolve, reject) => {
       this._apiGateway.post("clientes", cliente)
@@ -23,12 +23,24 @@ export class ClienteService {
     })
   }
 
-  getClientes(): Promise<Cliente[]> {
+  getClientes(){
 
-    return new Promise<Cliente[]>((resolve, reject) => {
+    return new Promise<any>((resolve, reject) => {
       this._apiGateway.get("clientes")
         .subscribe({
-          next: (res: HttpResponse<Cliente[]>) => { res.body ? resolve(res.body) : reject(res) },
+          next: (res: HttpResponse<Cliente[]>) => { res.body ? resolve(res.body) : resolve(res) },
+          error: (err: any) => { reject(err) },
+        })
+    })
+
+  }
+
+  deleteCliente(clienteId){
+
+    return new Promise<any>((resolve, reject) => {
+      this._apiGateway.delete(`clientes/${clienteId}`)
+        .subscribe({
+          next: (res: HttpResponse<any>) => { res.body ? resolve(res.body) : resolve(res) },
           error: (err: any) => { reject(err) },
         })
     })

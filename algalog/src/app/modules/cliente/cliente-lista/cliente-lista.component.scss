@@ -1,3 +1,13 @@
 tr.mat-row, tr.mat-footer-row {
     height: 30px;
 }
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  
